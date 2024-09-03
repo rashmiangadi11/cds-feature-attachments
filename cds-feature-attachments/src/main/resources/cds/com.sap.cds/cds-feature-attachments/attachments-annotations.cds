@@ -36,6 +36,9 @@ annotate Attachments with @UI: {
 } {
     note       @(title: '{i18n>attachment_note}');
     modifiedAt @(odata.etag);
+   content
+    @Core.ContentDisposition: { Filename: fileName }
+    @Core.Immutable
 }
 
 annotate Attachments with @Common: {SideEffects #ContentChanged: {
